@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+	<title>GTD Tools</title>
+	<link rel="stylesheet" type="text/css" href="css/fontello.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>						
+<body>
+	<header class="top">
+		<span>GTD Tools</span>
+	</header>
+	<div class="containter">
+		<div class="left-column">
+			<div class="catalogs">
+				<span>分类列表</span>
+				<ul class="file">
+					<li id="default-file" class="addfile"><p class="on-category choose" id="n0"><i class="ico ico-18 ico-cate"></i> 默认分类<span>(0)</span></p><ul class="subfile"></ul></li>
+				</ul>
+			</div>
+			<div class="addCatalog">
+				<i class="ico ico-18 ico-addCate"></i>新增分类
+			</div>
+		</div>
+		<div class="middle-column">
+			<header>
+				<div class="middle-task">
+					<span class="task-state icon-all-task">所有</span>
+				</div>
+				<div class="middle-task">
+					<span class="task-state icon-doing-task">未完成</span>
+				</div>
+				<div class="middle-task">
+					<span class="task-state icon-done-task">已完成</span>
+				</div>
+			</header>
+			<ul class="task"></ul>
+			<div class="addTask">
+				<i class="ico ico-18 ico-addTask"></i>新增任务
+			</div>
+		</div>
+		<div class="right-column">
+			<section class="addNewTaskColumn">
+				<form id="task-form" )return false;">
+					<label for="taskName">任务标题:</label>
+					<input type="text" name="taskName" id="taskName" autofocus placeholder="任务名" required maxlength="15"><span class="task-name-error"></span><br><hr>
+					<label for="deadline">完成时间:</label>
+					<input type="date" name="deadline" id="deadline" required>
+					<br><hr>
+					<textarea id="taskContent" required></textarea>
+					<button class="taskButton sure-task">确认</button>
+					<button class="taskButton cancel-task">取消</button>
+				</form>
+			</section>
+			<section class="viewTaskColumn">
+				<p class="task-name-v"><i class='icon-complete'></i><i class='icon-edit'></i>
+				</p>
+				<p class="task-date-v"></p>
+				<p class="task-content-v"></p>
+			</section>
+		</div>
+	</div>
+	<div class="pop">
+		<div class="pop-title">
+			<div class="pop-close">
+				<img id="pop-close" src="img/close.png">
+			</div>
+			<div class="pop-name">添加项目分类</div>
+		</div>
+		<div class="pop-content">
+			<p>分类名称：<input type="text" placeholder="输入类名" class="category-name" maxlength="8"></p>
+			<p>选择父类：
+				<select class="select-category">
+					<option>无</option>
+				</select>
+			</p>
+			<p class="pop-error"></p>
+			<button class="pop-button sure">确认</button>
+			<button class="pop-button cancel">取消</button>
+		</div>
+	</div>
+	<div class="overlay"></div>
+<script src="js/index.js"></script>
+</body>
+</html>

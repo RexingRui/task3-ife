@@ -1,0 +1,394 @@
+/*页面初始化*/
+* {
+	box-sizing: border-box;
+	font-family: Microsoft YaHei, sans-serif;
+}
+
+html {
+	height: 100%;
+	min-width: 900px;
+	min-height: 500px;
+}
+
+body {
+	padding: 0;
+	margin: 0;
+	height: 100%;
+}
+/*header*/
+.top {
+	background-color: #CCCCCC;
+	padding: 18px;
+	font-size: 1.4em;
+	height: 10%;
+}
+
+/*container
+三栏以浮动布局*/
+
+.containter {
+	width: 100%;
+	height: 90%; /*相对于body*/
+}
+
+.left-column {
+	position: relative;
+	float: left;
+	width: 20%;
+	min-width: 225px;
+	height: 100%;
+	background-color: #EEE9E9;
+	border-right: 1px solid #D4D4D4;
+}
+
+.middle-column {
+	position: relative;
+	float: left;
+	height: 100%;
+	width: 18%;
+	min-width: 220px;
+	background-color: #F5FFFA;
+	border-right: 1px solid #D4D4D4;
+}
+
+.right-column {
+	margin-left: 38%;
+	height: 100%;
+	width: 62%;
+	background-color: #FCFCFC;
+}
+
+/*catalog*/
+/*设置背景图像添加加号*/
+.addTask,
+.addCatalog {
+	position: absolute;
+	width: 100%;
+	height: 40px;
+	bottom: 0.01em;
+	border-top: 1px solid #D4D4D4;
+	background-color: #EEE9E9;
+
+}
+
+.addTask span,
+.addCatalog span {
+	position: absolute;
+	top: 25%;
+	left: 20%;
+	padding-left: 15%;
+	background-image: url("../img/add.png");
+	background-repeat: no-repeat;
+	background-size: 25px 25px;
+	background-position: 5% bottom;
+	font-size: 1.1em;
+	cursor: pointer;
+}
+
+/*设定分类列表的位置*/
+.catalogs {
+	position: absolute;
+	width: 185px;
+	margin: 8% 0;
+	left: 30px;
+}
+
+/*设定文件夹背景图*/
+.file {
+	padding: 0;	
+	margin-top: 10px;
+	width: 100%;
+}
+
+.subfile {
+	padding-left: 30px;
+}
+
+.file li {
+	list-style: none;
+}
+
+.file p{
+	margin-top: 0;
+	padding-left: 25px;
+	margin-bottom: 5px;
+	background-image: url("../img/file.png");
+	background-repeat: no-repeat;
+	background-size: 18px 18px;
+	background-position: 2% center;
+	cursor: pointer;
+}
+
+/*设定删除图标*/
+.delete {
+	width: 18px;
+	height: 18px;
+	margin-left: 15%;
+	margin-bottom: -3%;
+	display: none;
+}
+
+.subfile .delete {
+	margin-left: 10%;
+}
+
+/*中间栏*/
+
+.middle-column header {
+	background-color: #EDEDED;
+	border-bottom: 1px solid #D3D3D3;
+	word-spacing: -0.3em;
+}
+
+.middle-task {
+	display: inline-block;
+	height: 35px;
+	padding-top: 5px;
+	width: 33.33%;
+	cursor: pointer;
+	padding-left: 5px;
+}
+
+span.task-state {
+	font-size: 14px;
+}
+
+
+.all-task,
+.done-task,
+.doing-task {
+	height: 18px;
+	width: 18px;
+	margin-bottom: -5px;
+	margin-left: 2px;
+}
+
+.middle-task:first-child {
+	padding-left: 15px;
+
+}
+
+.middle-task:first-child img {
+	width: 22px;
+	height: 22px;
+}
+
+.task .task-name {
+	cursor: pointer;
+	margin: 0;
+	padding-left: 30px;
+	background-color: white;
+	border-bottom: 1px solid #D3D3D3;
+
+}
+
+.task .task-date {
+	background-color: #C4C4C4;
+	margin: 0;
+	padding-left: 30px;
+}
+
+.task {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	line-height: 1.5em;
+}
+
+
+
+
+/*右侧栏*/
+/*任务编辑页面*/
+.viewTaskColumn,
+.addNewTaskColumn {
+	width: 100%;
+	height: 100%;	
+	display: none;
+}
+
+.viewTaskColumn {
+	display: none;
+}
+
+form {
+	padding-top: 15px;
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+fieldset {
+	padding: 20px 0;
+	margin: 0;
+}
+form label {
+	margin-left: 5%;
+}
+
+form input {
+	width: 40%;
+}
+
+hr {
+	margin: 15px auto;
+}
+
+#taskContent {
+	display: block;
+	width: 80%;
+	height: 50%;
+	margin: 20px auto;
+}
+
+.taskButton {
+	background-color: #00BFFF;
+	width: 65px;
+	height: 30px; 
+	color: #fff;
+	outline: none;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.taskButton.sure-task {
+	position: absolute;
+	left: 68%;
+}
+
+.taskButton.cancel-task {
+	position: absolute;
+	left: 80%;
+}
+
+/*任务查看页面*/
+.task-name-v {
+	position: relative;
+	margin: 0;
+	padding: 15px 25px;
+	background-color: #DBDBDB;
+}
+
+.task-name-v img {
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	right: 20px;
+	cursor: pointer;
+}
+
+.task-name-v .img-complete {
+	right: 55px;
+}
+
+.task-date-v {
+	background-color: #FAFAD2;
+	padding: 15px 25px;
+	border: 1px solid #D4D4D4;
+	margin: 0;
+}
+
+.task-content-v {
+	margin: 0;
+	padding: 15px 25px;
+}
+
+
+/*浮层*/
+/*overlay*/
+.overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background-color: rgba(0,0,0,0.5);
+	z-index: 9;	
+	display: none;
+}
+
+.pop {
+	position: absolute;
+	margin: auto;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	z-index: 10;
+	height: 200px;
+	width: 400px;
+	background-color: #fff;
+	border: 1px solid #C4C4C4;
+	border-radius: 8px;
+	display: none;
+}
+
+.pop-title {
+	height: 15%;
+	width: 100%;
+	background-color: #C0FF3E;
+	border-top-right-radius: 8px;
+	border-top-left-radius: 8px;
+	padding: 2px 0 0 5px;
+}
+
+.pop-close {
+	float: left;
+	height: 25px;
+	width: 25px;
+	cursor: pointer;
+}
+
+.pop-close img {
+	width: 100%;
+}
+
+.pop-name {
+	float: right;
+	margin-right: 40%;
+}
+
+.pop-content {
+	margin-left: 60px;
+}
+
+.pop-content select {
+	width: 158px;
+	font-size: 14px;
+	margin-left: -5px;
+}
+
+.pop-error {
+	color: #f00;
+}
+
+.pop-button {
+	background-color: #00BFFF;
+	width: 65px;
+	height: 30px; 
+	color: #fff;
+	outline: none;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.pop.sure {
+	position: absolute;
+	left: 220px;
+	top: 150px;
+}
+
+.pop.cancel {
+	position: absolute;
+	left: 300px;
+	top: 150px;
+}
+
+.complete {
+	background-image: url("../img/CT.png");
+	background-size: 22px 22px;
+	background-repeat: no-repeat;
+	background-position: 8px 2px;
+	color: green;
+}

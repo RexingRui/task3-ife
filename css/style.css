@@ -1,0 +1,373 @@
+/**
+*variable
+*/
+/**
+*mixin
+*/
+/**
+*页面初始化
+*/
+* {
+  box-sizing: border-box;
+  font-family: "Microsoft YaHei", sans-serif;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+html {
+  height: 100%;
+  width: auto;
+  min-width: 800px;
+  min-height: 500px;
+}
+html body {
+  height: 100%;
+}
+html body .top {
+  background-color: #CCC;
+  padding: 18px;
+  font-size: 1.4em;
+  height: 10%;
+}
+html body .containter {
+  height: 90%;
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+}
+.left-column {
+  height: 100%;
+  width: 20%;
+  min-width: 230px;
+  min-height: 0;
+  position: relative;
+  float: left;
+  background-color: #EEE9E9;
+  border-right: 1px solid #D4D4D4;
+}
+.left-column .addCatalog,
+.middle-column .addTask {
+  top: auto;
+  right: auto;
+  bottom: 0.01em;
+  left: auto;
+  position: absolute;
+  background-color: #EEE9E9;
+  border-top: 1px solid #D4D4D4;
+  height: 40px;
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+}
+
+.ico-addTask,
+.ico-addCate {
+  display: inline-block;
+  vertical-align: bottom;
+  background-image: url("../img/css_spirtes.png");
+  background-repeat: no-repeat;
+  height: 28px;
+  width: 35px;
+  background-position: 0 -1px;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.catalogs {
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: 30px;
+  position: absolute;
+  height: auto;
+  width: 210px;
+  min-width: 0;
+  min-height: 0;
+  margin: 8% 0;
+}
+.catalogs .file {
+  margin-top: 10px;
+  height: auto;
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+}
+.file p {
+  width: 210px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  margin-left: -18px;
+}
+.subfile p {
+  width: 180px;
+}
+
+.ico-subcate,
+.ico-cate {
+  display: inline-block;
+  vertical-align: bottom;
+  background-image: url("../img/css_spirtes.png");
+  background-repeat: no-repeat;
+  height: 22px;
+  width: 35px;
+  background-position: -110px -7px;
+}
+
+.ico-subcate {
+  background-position: -80px -7px;
+}
+.catalogs .delete {
+  margin-left: 15%;
+  display: none;
+}
+.catalogs .file .subfile {
+  padding-left: 30px;
+}
+.middle-column {
+  height: 100%;
+  width: 18%;
+  min-width: 220px;
+  position: relative;
+  float: left;
+  background-color: #F5FFFA;
+  border-right: 1px solid #D4D4D4;
+}
+.middle-column header {
+  background-color: #EDEDED;
+  border-bottom: 1px solid #D3D3D3;
+  word-spacing: -0.3em;
+}
+.middle-column header .middle-task {
+  display: inline-block;
+  height: 35px;
+  width: 33.33%;
+  min-width: 0;
+  min-height: 0;
+  padding: 5px 0 0 5px;
+  cursor: pointer;
+}
+.middle-column header .middle-task span {
+  font-size: 14px;
+}
+
+.middle-column header .middle-task:first-child {
+  padding-left: 15px;
+}
+.middle-column header .middle-task:first-child img {
+  width: 22px;
+}
+.task-date {
+  cursor: auto;
+  padding-left: 30px;
+  background-color: #C4C4C4;
+  line-height: 1.5em;
+}
+.task-name {
+  cursor: pointer;
+  padding-left: 30px;
+  background-color: white;
+  line-height: 1.5em;
+}
+
+.complete {
+  color: green;
+  padding-left: 0;
+}
+.complete .ico-complete {
+  display: inline-block;
+  vertical-align: bottom;
+  color: #1aff1a;
+  width: 30px;
+  height: 20px;
+  background-image: url("../img/css_spirtes.png");
+  background-repeat: no-repeat;
+  background-position: -40px -9px;
+}
+.right-column {
+  margin-left: 38%;
+  height: 100%;
+  width: 62%;
+  min-width: 558px;
+  min-width: 0;
+  min-height: 0;
+  background-color: #FCFCFC;
+}
+.addNewTaskColumn {
+  display: none;
+  height: 100%;
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+}
+.addNewTaskColumn form {
+  padding: 15px 0 0 50px;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+}
+.addNewTaskColumn form hr {
+  margin: 15px 0 15px -50px;
+}
+.addNewTaskColumn form input {
+  width: 40%;
+}
+.addNewTaskColumn form #taskContent {
+  display: block;
+  height: 200px;
+  width: 80%;
+  min-width: 0;
+  min-height: 0;
+}
+.addNewTaskColumn form .taskButton.sure-task {
+  background-color: #00BFFF;
+  color: #fff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 65px;
+  height: 30px;
+  top: 365px;
+  right: auto;
+  bottom: auto;
+  left: 68%;
+  position: absolute;
+}
+.addNewTaskColumn form .taskButton.cancel-task {
+  background-color: #00BFFF;
+  color: #fff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 65px;
+  height: 30px;
+  top: 365px;
+  right: auto;
+  bottom: auto;
+  left: 80%;
+  position: absolute;
+}
+.task-content-v,
+.task-date-v,
+.task-name-v {
+  padding: 15px 25px;
+}
+.task-date-v {
+  background-color: #FAFAD2;
+  border: 1px solid #D4D4D4;
+}
+.task-name-v {
+  background-color: #DBDBDB;
+}
+.task-name-v i {
+  right: 20px;
+  position: absolute;
+  cursor: pointer;
+}
+.task-name-v .icon-complete {
+  right: 55px;
+}
+/**
+*弹窗设计
+*/
+.pop {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  height: 200px;
+  width: 400px;
+  min-width: 0;
+  min-height: 0;
+  margin: auto;
+  z-index: 100;
+  background-color: #fff;
+  border: 1px solid #C4C4C4;
+  border-radius: 8px;
+  display: none;
+}
+.overlay {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 50;
+  display: none;
+}
+.pop-title {
+  background-color: #C0FF3E;
+  border-top-right-radius: 8px 18px, 15%, -3%, none;
+  border-top-left-radius: 8px;
+  padding: 2px 0 0 5px;
+  height: 15%;
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+}
+.pop-title .pop-close {
+  cursor: pointer;
+  float: left;
+}
+.pop-title .pop-close img {
+  height: auto;
+  width: 25px;
+  min-width: 0;
+  min-height: 0;
+}
+.pop-title .pop-close .pop-name {
+  float: right;
+  margin-right: 40%;
+}
+.pop-content {
+  margin-left: 60px;
+}
+.pop-content select {
+  height: auto;
+  width: 158px;
+  min-width: 0;
+  min-height: 0;
+  font-size: 14px;
+  margin-left: -5px;
+}
+.pop-content .pop-error {
+  color: #f00;
+}
+.pop-content p {
+  margin: 16px 0;
+}
+.pop-content .pop-button.sure {
+  background-color: #00BFFF;
+  color: #fff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 65px;
+  height: 30px;
+  top: 150px;
+  right: auto;
+  bottom: auto;
+  left: 220px;
+  position: absolute;
+}
+.pop-content .pop-button.cancel {
+  background-color: #00BFFF;
+  color: #fff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 65px;
+  height: 30px;
+  top: 150px;
+  right: auto;
+  bottom: auto;
+  left: 300px;
+  position: absolute;
+}
