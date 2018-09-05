@@ -58,6 +58,7 @@ html body .containter {
   width: 100%;
   min-width: 0;
   min-height: 0;
+  cursor: pointer;
 }
 
 .ico-addTask,
@@ -167,6 +168,7 @@ html body .containter {
   padding-left: 30px;
   background-color: white;
   line-height: 1.5em;
+  border-bottom: 1px solid #C4C4C4;
 }
 
 .complete {
